@@ -1,0 +1,3 @@
+[submodule "PyTsunami"]
+	path = PyTsunami
+	url = git@github.com:jansenmarc/PyTsunami.git
