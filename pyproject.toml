@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "tsunamibot"
+version = "0.1.0"
+description = ""
+authors = ["Eduard953 <<>>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyTelegramBotAPI = "^4.6.0"
+requests = "^2.28.1"
+replit = "^3.2.4"
+tsunami = "^0.3"
+PyWaves = "^0.8.46"
+protobuf = "^4.21.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

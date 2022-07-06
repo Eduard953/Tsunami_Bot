@@ -1,9 +1,5 @@
-import telebot
-from replit import db
-import os
 import requests
 from datetime import datetime
-import pywaves as pw
 
 class Tsunami:
 
@@ -96,33 +92,3 @@ class Tsunami:
 
     def closePosition(self):
         return self.myAddress.invokeScript(self.contractAddress, 'closePosition', [], [])
-
-bot = telebot.TeleBot(os.environ['API_KEY'])
-
-
-def extract_adress(arg):
-    return arg.split()[1:]
-  
-@bot.message_handler(commands=['start'])
-def send_welcome(message):
-  bot.reply_to(message, "Dear user! This bot will notify you once your Margin Ratio will near maintenance margin ratio. Please use /address 3PF.., to add your address. More features coming soon")
-
-
-@bot.message_handler(commands=['address'])
-def add_adress(message):
-  user_id = message.chat.id
-  address = extract_adress(message.text)
-  db[user_id] = address
-  bot.send_message(user_id, address)
-  bot.send_message(user_id, "please check if this is your adress otherwise repeat the command")
-
-bot.infinity_polling()
-
-
-# @bot.message_handler(commands=['start', 'help'])
-# def send_welcome(message):
-# 	bot.reply_to(message, "Howdy, how are you doing?")
-
-# @bot.message_handler(func=lambda message: True)
-# def echo_all(message):
-# 	bot.reply_to(message, message.text)
